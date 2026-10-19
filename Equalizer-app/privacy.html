@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Svan Privacy Policy (beta)</title>
+<style>
+body { margin: 2rem auto; padding: 0 1rem; max-width: 48rem; font-family: system-ui, sans-serif; line-height: 1.6; color: #222; background: #fff; }
+h1, h2 { line-height: 1.25; } code { overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+<h1>Svan Privacy Policy (beta)</h1>
+<p>Svan processes audio locally on your Android device. The app does not upload, store as audio files, or send captured playback to a server. Engine B uses Android&#x27;s playback-capture permission and a foreground notification; Android asks for permission for each new capture session. Stop it from Hi-Fi or the system capture controls. Svan does not intentionally capture microphone input; RECORD_AUDIO is Android&#x27;s required permission for playback capture and the audio measurement probes.</p>
+<p>When you search or select headphone tuning, Svan downloads AutoEq measurement, index and target files from GitHub. Those requests expose ordinary network metadata (including your IP address) to GitHub and its delivery infrastructure. Imported curve files are read only when you choose them through Android&#x27;s file picker. EQ settings, presets, compatibility verdicts, routing preferences and cached tuning data are stored in the app&#x27;s local storage.</p>
+<p>Diagnostic logs can include player package names, session identifiers and measured levels. The app does not automatically send these logs. Share logs or screenshots only if you choose to do so. There is no advertising or analytics SDK in the current dependency list. Uninstalling the app removes its local data.</p>
+<p>Optional enhanced detection uses the Shizuku API after user approval. A read-only UserService runs as Android shell and reads only the fixed <code>audio</code> and <code>media.audio_flinger</code> reports. It accepts no arbitrary shell commands, paths, target packages or permission grants. Reads have byte/time limits; audio reports stay local. Only if the user taps &quot;Keep enhanced detection without Shizuku&quot; does Svan, while Shizuku is connected, run the one package-manager command <code>grant app.svan android.permission.DUMP</code> (the same as <code>adb shell pm grant</code>), for itself and that one permission only, so Shizuku can be uninstalled. Svan still reads only the two fixed audio reports. Uninstalling Svan removes the grant. Existing/manual DUMP grants remain supported. Shell detection needs Shizuku running and may need restarting after a phone reboot. Stopping Shizuku leaves basic player-session broadcast detection active. Setup links open Shizuku&#x27;s official website in the user&#x27;s browser. The Shizuku API is MIT licensed; its notice is included in assets.</p>
+<p>Notification-access player recognition has been removed. This build declares no notification listener and requests no access to other apps&#x27; notifications, SMS or accessibility services. POST_NOTIFICATIONS allows Svan to show its own notifications. Session broadcasts and the fixed audio reports described above provide detection. Recognition does not prove that an output path accepts effects or playback capture.</p>
+<p>This policy applies to Svan version 0.5.16-b (package <code>app.svan</code>), published by TziraH. Effective date: 20 October 2026.</p>
+<h2>Headphone calibration and settings export</h2>
+<p>Imported calibration curves and their hashes are stored privately for re-tuning. Published AutoEq data are fetched using the existing network path; preferences are never sent. Svan cannot record, clip or export captured playback, and captured audio is never saved. The Lab can save a generated 20-second measurement WAV that contains no music; release checks use synthetic test signals only.</p>
+<p>Settings export writes EQ, presets, Svaresa/audio preferences and active calibration curves only to a file you choose. The file may identify your headphone. It contains no audio, Android permissions or signing keys. Restore validates it locally without uploading it.</p>
+<h2>Apps Svan never touches</h2>
+<p>Svan never processes, captures, lists or routes audio from messaging and calling apps, social video apps, ride and delivery apps, payment apps, voice assistants, recorders, cameras, the phone app or system apps. This list is fixed in the app and applies to every app sharing the same Android user id. Music and video platforms such as YouTube, YouTube Music, Spotify, Apple Music and Gaana stay supported. Svan does not apply its EQ to the phone&#x27;s whole output mix unless a test build turns that on, and never during a call.</p>
+<h2>Optional floating controls and diagnostic detail</h2>
+<p>SYSTEM_ALERT_WINDOW is used only for the optional Svaramanas bubble. It is not needed for in-app controls and is not enabled automatically. You can disable the bubble or revoke overlay access. Diagnostic reports can additionally include phone/build details and output-device names and addresses; review and redact a report before sharing it. Posting a report in a public GitHub issue makes it visible to others. Files exported outside Svan are not deleted by uninstalling it.</p>
+<h2>Developer, contact and data retention</h2>
+<p>Svan is published by <strong>TziraH</strong>. For any privacy question, or to ask for a report you sent to be deleted, write to <a href="mailto:harizisclean@gmail.com">harizisclean@gmail.com</a>.</p>
+<p>Svan has no user account and no developer server, so the developer holds no data about you from the app. If you choose to email a diagnostic report, screenshot or other support message, it is used only to look into the problem you reported. Reports are kept only until resolved, then deleted, and you can ask for earlier deletion at the address above.</p>
+<p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
+</main>
+</body>
+</html>
